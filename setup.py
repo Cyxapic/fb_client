@@ -3,12 +3,12 @@ from setuptools import setup
 
 setup(
     name="Finger balabolka",
-    version='1.0.5',
+    version='1.0.6',
     description="A project of flood chat.",
     long_description="A flood chat project on ptyhon 3 and PyQt5",
     author="Artem Sukharenko",
     author_email="truecyxapic@yandex.ru",
-    url="https://github.com/Cyxapic/fb_server",
+    url="https://github.com/Cyxapic/fb_client",
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha',
