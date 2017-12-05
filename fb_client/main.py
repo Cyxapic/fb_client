@@ -40,7 +40,7 @@ def main():
     reciever.moveToThread(th)
     th.started.connect(reciever.poll)
     th.start()
-
+    userGUI.thread = th
     userGUI.show()
     sys.exit(app.exec_())
 

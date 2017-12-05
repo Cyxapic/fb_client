@@ -1,10 +1,7 @@
 # класс пользовательского интерфеса
 
 import sys
-
-from threading import Thread
-from PyQt5 import QtCore, QtWidgets, QtGui
-from PyQt5.QtCore import Qt, QThread, pyqtSlot
+from PyQt5 import QtWidgets, QtGui
 
 from accounts.account import UserManager
 from core.handlers import GuiReciever
@@ -25,7 +22,7 @@ class UserGUI(QtWidgets.QMainWindow):
         # иницилизация клиента
         self.user = None
         self.socket = socket
-        self.is_alive = False
+        self.thread = None
         self.contacts = []
         # Иконки для контактов
         self.icon_contact = QtGui.QIcon()
@@ -181,4 +178,6 @@ class UserGUI(QtWidgets.QMainWindow):
         '''посылает сообщение серверу об отключение клиента и выходит'''
         message = self.messages.action(username=self.user.username)
         self.socket.send_msg(message)
+        if self.thread:
+            self.thread.exit()
         self.close()
