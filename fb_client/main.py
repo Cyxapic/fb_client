@@ -14,6 +14,9 @@ from utils.utils import get_params
 from ui.gui_class import UserGUI
 
 
+params = get_params()
+app = QtWidgets.QApplication(sys.argv)
+client = Client(**params)
 userGUI = UserGUI(client)
 window = userGUI.get_chat()
 
@@ -29,12 +32,8 @@ def update_chat(data):
         print(e)
 
 
-def main(GUI):
-    app = QtWidgets.QApplication(sys.argv)
-
-    params = get_params()
-    client = Client(**params)
-
+def main():
+    '''основная функция - для .whl'''
     reciever = GuiReciever(client)
     reciever.gotData.connect(update_chat)
     th = QThread()
@@ -42,9 +41,9 @@ def main(GUI):
     th.started.connect(reciever.poll)
     th.start()
 
-    GUI.show()
+    userGUI.show()
     sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
-    main(userGUI)
+    main()
