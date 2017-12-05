@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
     name="Finger balabolka",
-    version='1.0.6',
+    version='1.0.12',
     description="A project of flood chat.",
     long_description="A flood chat project on ptyhon 3 and PyQt5",
     author="Artem Sukharenko",
@@ -19,7 +19,12 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='Flood chat for lern',
-    packages=['fb_client'],
+    packages=find_packages('fb_client'),
+    package_dir={'':'fb_client'},
+    package_data={
+        '': ['*.jpg','*.png', '*.gif'],
+        'ui': ['img/*.jpg', 'img/*.png', 'img/*.gif'],
+    },
     install_requires=[
         "certifi==2017.11.5",
         "chardet==3.0.4",
@@ -29,6 +34,7 @@ setup(
         "idna==2.6",
         "mccabe==0.6.1",
         "packaging==16.8",
+        "Pillow==4.3.0",
         "pkg-resources==0.0.0",
         "py==1.4.34",
         "pycodestyle==2.3.1",
@@ -52,7 +58,7 @@ setup(
     },
     entry_points={
         'gui_scripts': [
-            'finger_balabolka = fb_client:main',
+            'finger_balabolka = fb_client.main:main',
         ]
     },
 )

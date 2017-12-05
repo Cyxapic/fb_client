@@ -6,8 +6,11 @@ dparse==0.2.1
 flake8==3.4.1
 idna==2.6
 mccabe==0.6.1
+olefile==0.44
 packaging==16.8
+Pillow==4.3.0
 pkg-resources==0.0.0
+pkginfo==1.4.1
 py==1.4.34
 pycodestyle==2.3.1
 pyflakes==1.5.0
@@ -18,9 +21,12 @@ pytest-cov==2.5.1
 pytest-sugar==0.9.0
 PyYAML==3.12
 requests==2.18.4
+requests-toolbelt==0.8.0
 safety==1.6.1
 sip==4.19.3
 six==1.11.0
 SQLAlchemy==1.1.14
 termcolor==1.1.0
+tqdm==4.19.4
+twine==1.9.1
 urllib3==1.22
