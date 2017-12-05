@@ -14,6 +14,9 @@ from utils.utils import get_params
 from ui.gui_class import UserGUI
 
 
+userGUI = UserGUI(client)
+window = userGUI.get_chat()
+
 
 @pyqtSlot(str)
 def update_chat(data):
@@ -26,14 +29,11 @@ def update_chat(data):
         print(e)
 
 
-def main():
+def main(GUI):
     app = QtWidgets.QApplication(sys.argv)
 
     params = get_params()
     client = Client(**params)
-    userGUI = UserGUI(client)
-
-    window = userGUI.get_chat()
 
     reciever = GuiReciever(client)
     reciever.gotData.connect(update_chat)
@@ -42,9 +42,9 @@ def main():
     th.started.connect(reciever.poll)
     th.start()
 
-    userGUI.show()
+    GUI.show()
     sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
-    main()
+    main(userGUI)
