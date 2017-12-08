@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Finger balabolka",
-    version='1.0.19',
+    version='1.0.20',
     description="A project of flood chat.",
     long_description="A flood chat-client project on ptyhon 3 and PyQt5",
     author="Artem Sukharenko",
