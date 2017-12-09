@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Finger balabolka",
-    version='1.0.21',
+    version='1.0.25',
     description="A project of flood chat.",
     long_description="A flood chat-client project on ptyhon 3 and PyQt5",
     author="Artem Sukharenko",
@@ -19,10 +19,12 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords=['Flood chat client', 'chat PyQt 5', 'client jim chat'],
-    package_dir={'':'fb_client'},
-    packages=find_packages('fb_client'),
-    package_data={
-        'ui': ['img/*.jpg', 'img/*.png', 'img/*.gif'],
+    packages=find_packages('src'),
+    package_dir={'fb_client': 'src/fb_client'},
+    package_data={'fb_client':
+                        ['ui/img/*.png',
+                         'ui/img/*.jpg',
+                         'ui/img/*.gif']
     },
     install_requires=[
         "Pillow==4.3.0",

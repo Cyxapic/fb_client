@@ -8,10 +8,10 @@ import socket
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt, QThread, pyqtSlot
 
-from core.client import Client
-from core.handlers import GuiReciever
-from utils.utils import get_params
-from ui.gui_class import UserGUI
+from fb_client.core.client import Client
+from fb_client.core.handlers import GuiReciever
+from fb_client.utils.utils import get_params
+from fb_client.ui.gui_class import UserGUI
 
 
 params = get_params()

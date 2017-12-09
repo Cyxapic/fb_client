@@ -4,8 +4,8 @@ from hashlib import md5
 
 from PIL import Image
 
-from utils import log_config
-from utils.utils import get_path
+from fb_client.utils import log_config
+from fb_client.utils.utils import get_path
 from .db.settings import session, Base, engine
 from .db.models import User, ContactList
 

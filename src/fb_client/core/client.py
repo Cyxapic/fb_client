@@ -3,7 +3,7 @@ import json
 import logging
 import socket
 
-from utils import log_config
+from fb_client.utils import log_config
 
 
 logger = logging.getLogger("client_log")

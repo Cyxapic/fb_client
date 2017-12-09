@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, QtGui
 
-from utils.utils import get_path
+from fb_client.utils.utils import get_path
 
 from .ui_files import acc_set_ui
 

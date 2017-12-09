@@ -54,5 +54,4 @@ class Messages:
             "from": user,
             "contact": contact,
         }
-        print('MESSAGE_LEVEL >> edit_msg >>', message)
         return message

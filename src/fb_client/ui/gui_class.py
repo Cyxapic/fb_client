@@ -3,10 +3,10 @@
 import sys
 from PyQt5 import QtWidgets, QtGui
 
-from accounts.account import UserManager
-from core.handlers import GuiReciever
-from protocol.jim import Messages
-from utils.utils import get_path
+from fb_client.accounts.account import UserManager
+from fb_client.core.handlers import GuiReciever
+from fb_client.protocol.jim import Messages
+from fb_client.utils.utils import get_path
 
 from .ui_files.client_ui import Ui_MainWindow
 from .dialogs import EnterDialog, HelpDialog, AboutDialog
@@ -76,8 +76,6 @@ class UserGUI(QtWidgets.QMainWindow):
                         -qt-block-indent:0; text-indent:0px;">
                     <span style="color:red;">SERVER#</span>
                 {}</p>""".format(response)
-            #msg = "<SERVER> {}".format(response)
-            #self.ui.chatWindow.append(msg)
             self.ui.chatWindow.insertHtml(msg)
             self.ui.username.setText(self.user.username)
             contacts = data_msg.get('contacts', None)
