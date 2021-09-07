@@ -27,7 +27,7 @@ setup(
                          'ui/img/*.gif']
     },
     install_requires=[
-        "Pillow==4.3.0",
+        "Pillow==8.3.2",
         "PyQt5==5.9",
         "SQLAlchemy==1.1.14",
     ],
